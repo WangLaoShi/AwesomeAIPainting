@@ -30,7 +30,9 @@ Stable Diffusion 是以文本生成图像的 AI 工具，也是唯一一款能�
 
 ![mstMjT](https://oss.images.shujudaka.com/uPic/mstMjT.jpg)
 
-然后，将 Stable Diffusion WebUI Docker 下载并解压到本地硬盘。接着，选择采样模型并下载依赖文件，将其放于 Stable Diffusion WebUI Docker 解压目录中的 model 文件夹。或者，使用阿里云盘下载聚合版。
+然后，将 Stable Diffusion WebUI Docker 下载并解压到本地硬盘。
+
+接着，选择采样模型并下载依赖文件，将其放于 Stable Diffusion WebUI Docker 解压目录中的 model 文件夹。或者，使用阿里云盘下载聚合版。
 
 * 🔗 下载链接：
 
@@ -59,17 +61,25 @@ models/
 
 ## 启动 Stable Diffusion
 
-配置好 Stable Diffusion WebUI Docker，就可以进入 Linux 环境启动 Docker 容器。不过在此之前，我们需拥有 Stable Diffusion 的 Linux 路径。
+配置好 Stable Diffusion WebUI Docker，就可以进入 Linux 环境启动 Docker 容器。
 
-Windows 本地磁盘挂载在 Linux 的 mnt 目录下，因此 Windows 的 Linux 路径需先添加 /mnt/ 前缀，把磁盘符号改为小写，并将反斜扛 \ 替换为 /。假设容器位于「D:\Backup\Libraries\Desktop\stable-diffusion-webui-docker」，转换为 Linux 路径则是「/mnt/d/Backup/Libraries/Desktop/stable-diffusion-webui-docker」。
+不过在此之前，我们需拥有 Stable Diffusion 的 Linux 路径。
+
+Windows 本地磁盘挂载在 Linux 的 mnt 目录下，因此 Windows 的 Linux 路径需先添加 /mnt/ 前缀，把磁盘符号改为小写，并将反斜扛 \ 替换为 /。
+
+假设容器位于「D:\Backup\Libraries\Desktop\stable-diffusion-webui-docker」，转换为 Linux 路径则是「/mnt/d/Backup/Libraries/Desktop/stable-diffusion-webui-docker」。
 
 准备好 Linux 路径后，打开 WSL Ubuntu 执行命令：
 
 **cd /mnt/d/Backup/Libraries/Desktop/stable-diffusion-webui-docker**
 
-进入 Stable Diffusion WebUI Docker 解压路径。随后，执行首次容器构建命令 docker compose build，第一次构建容器需要 10 分钟左右。
+进入 Stable Diffusion WebUI Docker 解压路径。
 
-然后，执行容器再次构建命令 docker compose up --build，把采样模型与 Stable Diffusion 打包进同一容器。构建完成后，命令行提示：
+随后，执行首次容器构建命令 **docker compose build** ，第一次构建容器需要 10 分钟左右。
+
+然后，执行容器再次构建命令 **docker compose up --build** ，把采样模型与 Stable Diffusion 打包进同一容器。
+
+构建完成后，命令行提示：
 
 **Running on local URL: http://localhost:7860/**
 
@@ -77,7 +87,9 @@ Windows 本地磁盘挂载在 Linux 的 mnt 目录下，因此 Windows 的 Linux
 
 ![zLoPYX](https://oss.images.shujudaka.com/uPic/zLoPYX.jpg)
 
-之后，你只需打开 Docker Desktop 就会启动 Stable Diffusion。如果要更新 Stable Diffusion，使用新版配置文件，按上方步骤重新构建容器即可。
+之后，你只需打开 Docker Desktop 就会启动 Stable Diffusion。
+
+如果要更新 Stable Diffusion，使用新版配置文件，按上方步骤重新构建容器即可。
 
 🔗 下载链接：
 
