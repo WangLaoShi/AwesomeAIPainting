@@ -73,7 +73,7 @@ Windows 本地磁盘挂载在 Linux 的 mnt 目录下，因此 Windows 的 Linux
 
 **Running on local URL: http://localhost:7860/**
 
-用浏览器打开 http://localhost:7860/，你就可以在本地 AI 生成图片了。
+用浏览器打开 http://localhost:7860/ ，你就可以在本地 AI 生成图片了。
 
 ![zLoPYX](https://oss.images.shujudaka.com/uPic/zLoPYX.jpg)
 
