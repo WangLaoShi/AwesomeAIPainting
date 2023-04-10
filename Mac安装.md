@@ -39,10 +39,47 @@
 
 ![EO0AOt](https://oss.images.shujudaka.com/uPic/EO0AOt.jpg)
 
-## 文生图
+### 文生图
 
 第一次生成的时候，会自动下载模型；然后开始生成图像，笔者是18年的苹果Pro笔记本，大约耗时2分半钟。
 
+![A7tOf7](https://oss.images.shujudaka.com/uPic/A7tOf7.jpg)
+
 ![wE1wan](https://oss.images.shujudaka.com/uPic/wE1wan.jpg)
 
+
+### 图生图
+
+支持导入照片
+
+支持导入手绘草稿
+
+支持在照片上修改，再生成
+
+![xdnKpc](https://oss.images.shujudaka.com/uPic/xdnKpc.jpg)
+
+![dJjiCm](https://oss.images.shujudaka.com/uPic/dJjiCm.jpg)
+
+### 图内修改
+
+擦除
+
+替换
+
+![SP1AYi](https://oss.images.shujudaka.com/uPic/SP1AYi.jpg)
+
+![W2f7sb](https://oss.images.shujudaka.com/uPic/W2f7sb.jpg)
+
+
+### 扩展
+
+![nBAoyS](https://oss.images.shujudaka.com/uPic/nBAoyS.jpg)
+
+![kyQ7u7](https://oss.images.shujudaka.com/uPic/kyQ7u7.jpg)
+
+![37ciFv](https://oss.images.shujudaka.com/uPic/37ciFv.jpg)
+
+### 查看历史
+
+![OODPgU](https://oss.images.shujudaka.com/uPic/OODPgU.jpg)
 
