@@ -18,19 +18,20 @@ Stable Diffusion 是以文本生成图像的 AI 工具，也是唯一一款能�
 
 ### **安装 WSL**
 
-在管理员 PowerShell 输入命令 wsl --install，之后终端会默认安装 Ubuntu。系统下载时间较长，注意别关机。安装 Ubuntu 完成后，按提示设置 Ubuntu 账户和密码。
+在管理员 **PowerShell** 输入命令 `wsl --install`，之后终端会默认安装 Ubuntu。系统下载时间较长，注意别关机。
+安装 Ubuntu 完成后，按提示设置 Ubuntu 账户和密码。
 
 ### **启用 Hyper-V**
 
-以管理员身份打开 PowerShell 控制台，输入命令 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All。重启电脑后，将开启 Hyper-V。
+以管理员身份打开 **PowerShell** 控制台，输入命令 `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All`。重启电脑后，将开启 Hyper-V。
 
 ## **配置 Stable Diffusion**
 
-按系统选择 Docker Desktop 版本，安装后点击左侧的 Add Extensions，推荐使用 Disk usage 扩展，便于管理 Docker 存储空间。
+按系统选择 Docker Desktop 版本，安装后点击左侧的 **Add Extensions**，推荐使用 Disk usage 扩展，便于管理 Docker 存储空间。
 
 ![mstMjT](https://oss.images.shujudaka.com/uPic/mstMjT.jpg)
 
-然后，将 Stable Diffusion WebUI Docker 下载并解压到本地硬盘。
+然后，将 **Stable Diffusion WebUI Docker** 下载并解压到本地硬盘。
 
 接着，选择采样模型并下载依赖文件，将其放于 Stable Diffusion WebUI Docker 解压目录中的 model 文件夹。或者，使用阿里云盘下载聚合版。
 
@@ -61,19 +62,21 @@ models/
 
 ## 启动 Stable Diffusion
 
-配置好 Stable Diffusion WebUI Docker，就可以进入 Linux 环境启动 Docker 容器。
+配置好 **Stable Diffusion WebUI Docker**，就可以进入 Linux 环境启动 Docker 容器。
 
 不过在此之前，我们需拥有 Stable Diffusion 的 Linux 路径。
 
 Windows 本地磁盘挂载在 Linux 的 mnt 目录下，因此 Windows 的 Linux 路径需先添加 /mnt/ 前缀，把磁盘符号改为小写，并将反斜扛 \ 替换为 /。
 
-假设容器位于「D:\Backup\Libraries\Desktop\stable-diffusion-webui-docker」，转换为 Linux 路径则是「/mnt/d/Backup/Libraries/Desktop/stable-diffusion-webui-docker」。
+假设容器位于「**D:\Backup\Libraries\Desktop\stable-diffusion-webui-docker**」，转换为 Linux 路径则是「**/mnt/d/Backup/Libraries/Desktop/stable-diffusion-webui-docker**」。
 
-准备好 Linux 路径后，打开 WSL Ubuntu 执行命令：
+可以按照👇🏻步骤操作：
+
+准备好 Linux 路径后（这里指的是，你得到了你自己本地电脑中类似于上面的步骤，请注意，每个人的电脑的路径不同，请按照你自己的电脑合理的配置这个路径，在文章中，作者的地址是 **D:\...**，但是你的电脑大概齐一定不是这个，你得按照你本地电脑的路径来），打开 WSL Ubuntu 执行命令：
 
 **cd /mnt/d/Backup/Libraries/Desktop/stable-diffusion-webui-docker**
 
-进入 Stable Diffusion WebUI Docker 解压路径。
+进入 **Stable Diffusion WebUI Docker** 解压路径。
 
 随后，执行首次容器构建命令 **docker compose build** ，第一次构建容器需要 10 分钟左右。
 
@@ -87,9 +90,9 @@ Windows 本地磁盘挂载在 Linux 的 mnt 目录下，因此 Windows 的 Linux
 
 ![zLoPYX](https://oss.images.shujudaka.com/uPic/zLoPYX.jpg)
 
-之后，你只需打开 Docker Desktop 就会启动 Stable Diffusion。
+之后，你只需打开 **Docker Desktop** 就会启动 **Stable Diffusion**。
 
-如果要更新 Stable Diffusion，使用新版配置文件，按上方步骤重新构建容器即可。
+如果要更新 **Stable Diffusion**，使用新版配置文件，按上方步骤重新构建容器即可。
 
 🔗 下载链接：
 
@@ -130,7 +133,7 @@ Upscale 放大分辨率功能有 RealESRGAN，GoBIG，Latent Diffusion Super Res
 
 ### 文字描述图像
 
-Stable Diffusion 的核心功能是以文字内容描绘一个场景或事物，从而决定你的画面中将出现什么。因此，文字描绘是决定图像生成质量的关键因素。接下来，我会以官方文档案例为例，解构描述文字的要素和标准。
+**Stable Diffusion** 的核心功能是以文字内容描绘一个场景或事物，从而决定你的画面中将出现什么。因此，文字描绘是决定图像生成质量的关键因素。接下来，我会以官方文档案例为例，解构描述文字的要素和标准。
 
 ```
 A beautiful painting (画作种类) of a singular lighthouse, shining its light across a tumultuous sea of blood (画面描述) by greg rutkowski and thomas kinkade (画家/画风), Trending on artstation (参考平台), yellow color scheme (配色)
@@ -149,15 +152,18 @@ Prompt matrix 是按不同条件组合生成多张相关但不同的画面，可
 
 [机甲大战 - Stable Diffusion 生成视频示例](https://www.bilibili.com/video/BV1YP411V7vV/?share_source=copy_web&vd_source=5ba49e267f2568196048f52db05bacf0)
 
-Prompt matrix 官方样例为 a busy city street in a modern city|illustration|cinematic lighting，| 符号后的场景条件将进行排列组合，样例有 2 个场景条件生成 4 张图。
-另外，我们可以指定场景条件位置，比如 @(moba|rpg|rts) character (2d|3d) model 表示 (moba|rpg|rts 三选一) character (2d|3d 二选一) model，也就是会生成 3*2 张图片。开头的 @ 是触发指定场景条件位置的符号，不能省略。
+Prompt matrix 官方样例为 **a busy city street in a modern city|illustration|cinematic lighting**，`|` 符号后的场景条件将进行排列组合，样例有 2 个场景条件生成 4 张图。
+
+另外，我们可以指定场景条件位置，比如 **@(moba|rpg|rts) character (2d|3d) model 表示 (moba|rpg|rts 三选一) character (2d|3d 二选一) model**，也就是会生成 3*2 张图片。开头的 @ 是触发指定场景条件位置的符号，不能省略。
 
 
 ## 常见问题
 
 ### Docker Desktop failed
 
-未正常关闭 Docker 容器时，下次启动可能会报错 Docker Desktop failed to stop 。在 PowerShell 中输入关闭 WSL 和 docker-desktop 命令，可以修复该问题。
+未正常关闭 Docker 容器时，下次启动可能会报错 **Docker Desktop failed to stop** 。
+
+在 PowerShell 中输入关闭 WSL 和 docker-desktop 命令，可以修复该问题。
 
 ```
 wsl --shutdown
@@ -171,7 +177,11 @@ wsl -l -v
 Docker 容器原本运行正常，端口访问突然被拒绝了，显示：
 
 ```
-Error response from daemon: Ports are not available: exposing port TCP 0.0.0.0:7860 -> 0.0.0.0:0: listen tcp 0.0.0.0:7860: bind: An attempt was made to access a socket in a way forbidden by its access permissions
+Error response from daemon: 
+Ports are not available: 
+exposing port TCP 0.0.0.0:7860 -> 0.0.0.0:0: 
+listen tcp 0.0.0.0:7860: 
+bind: An attempt was made to access a socket in a way forbidden by its access permissions
 ```
 
 在 Powershell 中输入：
